@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        double x;
+        double x1, x2;
 
         System.out.println("Dime el valor de a: ");
         double a = Double.parseDouble(s.next());
@@ -16,31 +16,27 @@ public class Main {
         // Esto de aqui he tenido que buscarlo, no tengo ni idea de matemáticas
 
         if (a == 0 && b == 0 && c == 0) {
-            System.out.println("0 = 0, por tanto tiene indefinidas soluciones");
-
-
-        } else {
-            if (a == 0 && b == 0) {
+            System.out.println("0 = 0, por tanto tiene infinitas soluciones");
+        }
+        if (a == 0 && b == 0 && c != 0) {
                 System.out.println("No hay ninguna solución válida");
+        }
+        if (a != 0 && b != 0 && c == 0) {
+            System.out.println("x1 = 0");
+            System.out.println("x2 = -b/a");
+
+        }
+        if(a != 0 && b != 0 && c != 0){
+            double discriminante = b*b - (4*a*c);
+            if (discriminante < 0) {
+                System.out.println("LA solucion no es real");
             }
             else
             {
-                if (a == 0) {
-                    x = (-c/b);
-                    System.out.println("la solución de x es: "+ x);
-                } else if ( b != 0 && c != 0) {
-                    double d = ((b*b) - (4*a*c));
-
-                    if (d > 0) {
-                        System.out.println("Existen dos soluciones diferentes");
-                        System.out.println("x1 = " + (-b + Math.sqrt(d)) / (2 * a));
-                        System.out.println("x2 = " + (-b - Math.sqrt(d)) / (2 * a));
-
-                    } else {
-                        System.out.println("Null");
-                    }
-                }
+                System.out.println("x1 = "+ (-b + Math.sqrt(discriminante)) /(2/a));
+                System.out.println("x2 = "+ (-b - Math.sqrt(discriminante)) /(2/a));
             }
+
         }
     }
 }

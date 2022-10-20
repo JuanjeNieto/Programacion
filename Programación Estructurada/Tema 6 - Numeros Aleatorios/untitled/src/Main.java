@@ -34,6 +34,15 @@ public class Main {
                 case 7:
                     ejercicio7();
                     break;
+                case 8:
+                    ejercicio8();
+                    break;
+                case 9:
+                    ejercicio9();
+                    break;
+                case 10:
+                    ejercicio10();
+                    break;
                 default:
                     System.out.println("Ejercicio inexistente!");
                     break;
@@ -247,11 +256,99 @@ public class Main {
     public static void ejercicio7() {
         Scanner s = new Scanner(System.in);
         System.out.println("--------------");
-        System.out.println("QUINIELA JORNADA 09 LA LIGA SANTANDER");
+        System.out.println("QUINIELA JORNADA 10 LA LIGA SANTANDER");
         String valorApuesta = "";
 
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("-------");
+            System.out.println("Columna Nª"+i);
+            System.out.println();
+            for (int j = 1; j <= 14; j++) {
+                int apuesta = (int)(Math.random()*3);
+                switch (apuesta){
+                    case 0:
+                        valorApuesta = "X";
+                        break;
+                    case 1:
+                        valorApuesta = "1";
+                        break;
+                    case 2:
+                        valorApuesta = "2";
+                        break;
+                    default:
+                        break;
 
-        for (int i = 1; i <= 14; i++) {
+                }
+                System.out.println("Apuesta Nª"+(100+j)+"\t" + valorApuesta);
+                System.out.println();
+            }
+
         }
+
+
+    }
+    public static void ejercicio8(){
+
+        Scanner s = new Scanner(System.in);
+        System.out.println("--------------");
+        System.out.println("QUINIELA JORNADA 10 LA LIGA SANTANDER");
+        String valorApuesta = "";
+
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("-------");
+            System.out.println("Columna Nª"+i);
+            System.out.println();
+            for (int j = 1; j <= 14; j++) {
+                //Como dice el ejercicio, lo hacemos con divisores de 6
+                //3/6 para el 1
+                //2/6 para el 2
+                //1/6 para el X
+                int apuesta = (int)(Math.random()*6);
+                switch (apuesta){
+                    case 0:
+                        valorApuesta = "1";
+                        break;
+                    case 1:
+                        valorApuesta = "1";
+                        break;
+                    case 2:
+                        valorApuesta = "1";
+                        break;
+                    case 3:
+                        valorApuesta = "2";
+                        break;
+                    case 4:
+                        valorApuesta = "2";
+                        break;
+                    case 5:
+                        valorApuesta = "X";
+                    default:
+                        break;
+
+                }
+                System.out.println("Apuesta Nª"+(100+j)+"\t" + valorApuesta);
+                System.out.println();
+            }
+
+        }
+    }
+    public static void ejercicio9(){
+
+        int r = 0;
+        int cont = 0;
+        do{
+            r = (int) (Math.random() * 101);
+            if ((r%2) == 0) {
+                System.out.println(r);
+            }
+            cont ++;
+        }while(r != 24);
+        System.out.println("Se han generado "+cont+" numeros");
+
+
+    }
+    public static void ejercicio10(){
+
+        
     }
 }

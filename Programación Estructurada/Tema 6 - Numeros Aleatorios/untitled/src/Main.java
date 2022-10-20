@@ -1,8 +1,9 @@
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         int opcion;
         System.out.println("Relacion Ejercicio 06 - Bucles");
         do {
@@ -27,26 +28,34 @@ public class Main {
                 case 5:
                     ejercicio5();
                     break;
+                case 6:
+                    ejercicio6();
+                    break;
+                case 7:
+                    ejercicio7();
+                    break;
                 default:
                     System.out.println("Ejercicio inexistente!");
                     break;
             }
         } while (opcion != 0);
     }
+
     public static void ejercicio1() {
         int count = 0;
 
         for (int i = 1; i <= 3; i++) {
-            double r = (Math.random()*6 + 1);
+            double r = (Math.random() * 6 + 1);
 
-            System.out.print((int)r + " ");
-                count += r;
+            System.out.print((int) r + " ");
+            count += r;
 
         }
         System.out.println();
         System.out.println(count);
         System.out.println();
-     }
+    }
+
     public static void ejercicio2() {
         System.out.println("Muestra una carta al azar:");
         int carta = (int) (Math.random() * 13) + 1; // genera un número aleatorio
@@ -91,26 +100,32 @@ public class Main {
             case 13:
                 System.out.print("K");
                 break;
-            default: break;
+            default:
+                break;
 
         }
         int palo = (int) (Math.random() * 4) + 1;
 
-        switch (palo){
+        switch (palo) {
             case 1:
-                System.out.print(" de Pica"); break;
+                System.out.print(" de Pica");
+                break;
             case 2:
-                System.out.print(" de Trébol"); break;
+                System.out.print(" de Trébol");
+                break;
             case 3:
-                System.out.print(" de Corazones"); break;
+                System.out.print(" de Corazones");
+                break;
             case 4:
-                System.out.print(" de Diamantes"); break;
+                System.out.print(" de Diamantes");
+                break;
         }
         System.out.println();
 
 
     }
-    public static void ejercicio3(){
+
+    public static void ejercicio3() {
         System.out.println("Muestra una carta española al azar:");
         int carta = (int) (Math.random() * 10) + 1; // genera un número aleatorio
 
@@ -146,41 +161,97 @@ public class Main {
                 System.out.print("Rey");
                 break;
 
-            default: break;
+            default:
+                break;
 
         }
         int palo = (int) (Math.random() * 4) + 1;
 
-        switch (palo){
+        switch (palo) {
             case 1:
-                System.out.print(" de Basto"); break;
+                System.out.print(" de Basto");
+                break;
             case 2:
-                System.out.print(" de Oro"); break;
+                System.out.print(" de Oro");
+                break;
             case 3:
-                System.out.print(" de Copa"); break;
+                System.out.print(" de Copa");
+                break;
             case 4:
-                System.out.print(" de Espada"); break;
+                System.out.print(" de Espada");
+                break;
         }
         System.out.println();
     }
-    public static void ejercicio4(){
+
+    public static void ejercicio4() {
         for (int i = 1; i <= 20; i++) {
-            System.out.print((int)(Math.random()*10 +1)+" ");
+            System.out.print((int) (Math.random() * 10 + 1) + " ");
         }
     }
-    public static void ejercicio5(){
 
-        int count = 0;
+    public static void ejercicio5() {
+
+        int suma = 0;
+        int max = 0;
+        int min = 199;
 
         for (int i = 1; i <= 50; i++) {
-            double r = (Math.random()*11 + 100 );
+            double r = (Math.random() * 100) + 100;
 
-            System.out.print((int)r + " ");
-            count += r;
+            System.out.print((int) r + " ");
+
+            if (r > max) {
+                max = (int) r;
+            } else if (r < min) {
+                min = (int) r;
+            }
+            suma += r;
 
         }
         System.out.println();
-        System.out.println("la suma del total es: " + count);
+        System.out.println("El minimo es = " + min);
+        System.out.println("El maximo es = " + max);
+        System.out.println("La media es " + (suma / 50));
         System.out.println();
     }
+
+    public static void ejercicio6() {
+        Scanner s = new Scanner(System.in);
+
+        double r = ((int) (Math.random() * 101));
+        int cont = 4;
+        int numerointroducido = 0;
+        int i = 0;
+
+        while (i <= cont && numerointroducido != r) {
+            System.out.println("Dime un número");
+            numerointroducido = Integer.parseInt(s.next());
+
+            if (numerointroducido == r) {
+                System.out.println("ENHORABUENAAA");
+            } else {
+                if (numerointroducido < r) {
+                    System.out.println("Intenta con uno más grande");
+                }
+                if (numerointroducido > r) {
+                    System.out.println("Intenta uno más pequeño");
+                }
+                System.out.println("Te quedan " + cont + " intentos");
+
+                cont--;
+            }
+        }
     }
+
+    public static void ejercicio7() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("--------------");
+        System.out.println("QUINIELA JORNADA 09 LA LIGA SANTANDER");
+        String valorApuesta = "";
+
+
+        for (int i = 1; i <= 14; i++) {
+        }
+    }
+}

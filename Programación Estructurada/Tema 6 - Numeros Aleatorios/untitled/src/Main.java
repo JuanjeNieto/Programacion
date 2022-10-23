@@ -335,20 +335,20 @@ public class Main {
     public static void ejercicio9(){
 
         int r = 0;
-        int cont = 0;
-        do{
-            r = (int) (Math.random() * 101);
+        int count = 0;
+        while(r != 24){
+            r = (int)(Math.random() * 101);
             if ((r%2) == 0) {
                 System.out.println(r);
+                count++;
             }
-            cont ++;
-        }while(r != 24);
-        System.out.println("Se han generado "+cont+" numeros");
+        }
+        System.out.println("Se han generado "+count+" numeros");
 
 
     }
     public static void ejercicio10(){
 
-        
+
     }
 }

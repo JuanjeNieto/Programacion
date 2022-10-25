@@ -43,6 +43,18 @@ public class Main {
                 case 10:
                     ejercicio10();
                     break;
+                case 11:
+                    ejercicio11();
+                    break;
+                case 12:
+                    ejercicio12();
+                    break;
+                case 13:
+                    ejercicio13();
+                    break;
+                case 14:
+                    ejercicio14();
+                    break;
                 default:
                     System.out.println("Ejercicio inexistente!");
                     break;
@@ -228,7 +240,7 @@ public class Main {
     public static void ejercicio6() {
         Scanner s = new Scanner(System.in);
 
-        double r = ((int) (Math.random() * 101));
+        double r = (int)((Math.random() * 101));
         int cont = 4;
         int numerointroducido = 0;
         int i = 0;
@@ -251,6 +263,7 @@ public class Main {
                 cont--;
             }
         }
+        System.out.println("El numero era "+r);
     }
 
     public static void ejercicio7() {
@@ -367,6 +380,87 @@ public class Main {
             }
             System.out.println();
         }
+
+    }
+
+    public static void ejercicio11(){
+        String nota = "";
+        int suspenso = 0;
+        int suficiente = 0;
+        int bien = 0;
+        int notable = 0;
+        int sobresaliente = 0;
+        for (int i = 0; i < 20; i++) {
+
+
+            int r = (int) (Math.random() * 5);
+
+            switch (r) {
+                case 0:
+                    nota = "Suspenso";
+                    suspenso++;
+                    break;
+                case 1:
+                    nota = "Suficiente";
+                    suficiente++;
+                    break;
+                case 2:
+                    nota = "Bien";
+                    bien++;
+                    break;
+                case 3:
+                    nota = "Notable";
+                    notable++;
+                    break;
+                case 4:
+                    nota = "Sobresaliente";
+                    sobresaliente++;
+                    break;
+
+            }
+            System.out.println(nota);
+        }
+        System.out.println("Hay " + suspenso + " suspensos");
+        System.out.println("Hay " + suficiente + " sufis");
+        System.out.println("Hay " + bien + " bienes");
+        System.out.println("Hay " + notable + " notables");
+        System.out.println("Hay " + sobresaliente + " sobres");
+    }
+
+    public static void ejercicio12(){
+
+        for (int i = 1; i < 1000000; i++) {
+            char r = (char)((Math.random()*127)+32);
+            System.out.print(r);
+        }
+    }
+    public static void ejercicio13(){
+
+       boolean igual = false;
+
+        while (!igual){
+
+            int dado1 = ((int)(Math.random()*6)+1);
+            int dado2 = ((int)(Math.random()*6)+1);
+            System.out.println();
+
+            System.out.println(dado1);
+            System.out.println(dado2);
+
+            if (dado2 == dado1) {
+                igual = true;
+            }
+
+        }
+        System.out.println();
+    }
+    public static void ejercicio14(){
+        Scanner s = new Scanner(System.in);
+
+        System.out.println();
+        int numeroIntroducido = 0;
+
+
 
     }
 }

@@ -55,6 +55,12 @@ public class Main {
                 case 14:
                     ejercicio14();
                     break;
+                case 15:
+                    ejercicio15();
+                    break;
+                case 16:
+                    ejercicio16();
+                    break;
                 default:
                     System.out.println("Ejercicio inexistente!");
                     break;
@@ -457,10 +463,109 @@ public class Main {
     public static void ejercicio14(){
         Scanner s = new Scanner(System.in);
 
-        System.out.println();
+        System.out.println("Piensa un número entre 0 y 100");
         int numeroIntroducido = 0;
+        int i = 1;
+        int min = 0;
+        int max = 100;
+        boolean acierto = false;
 
+        while((i <= 5) && (!acierto)){
+            int r = (int)(Math.random()*(max-min+1))+min;
+            System.out.println("Es este? = "+r);
+            System.out.println("Sí (0)" +"\tEs mayor (1)"+"\tEs menor(2)");
+            int opcion = 0;
+            opcion = Integer.parseInt(s.next());
 
+            switch(opcion){
+                case 0:
+                    acierto = true;
+                    System.out.println("Pan comido!");
+                    break;
+                case 1:
+                    min = r+1;
+                    break;
+                case 2:
+                    max = r-1;
+                    break;
+                default:
+                    System.out.println("Error");
+                    i--;
+                    break;
+            }
+                i++;
 
+        }
+        if (!acierto){
+            System.out.println("Me has ganado...");
+        }
+    }
+
+    public static void ejercicio15(){
+          int compas = 2;
+
+        while (compas %2 == 0){
+            compas = (int)((Math.random()*28)+4);
+        };
+
+        String primera = "";
+
+        for (int i = 0; i < compas; i++){
+
+            for (int j = 0; j < 4; j++){
+
+                int notaRandom = (int)(Math.random()*7);
+                String nota = "";
+                switch (notaRandom){
+                    case 0:
+                        nota = "do";
+                        break;
+                    case 1:
+                        nota = "re";
+                        break;
+                    case 2:
+                        nota = "mi";
+                        break;
+                    case 3:
+                        nota = "fa";
+                        break;
+                    case 4:
+                        nota = "sol";
+                        break;
+                    case 5:
+                        nota = "la";
+                        break;
+                    case 6:
+                        nota = "si";
+                        break;
+                }
+                if ((i == 0) && (j == 0)){
+                    primera = nota;
+                }
+                if ((i == compas-1) && (j == 3)){
+                    nota = primera;
+                }
+                System.out.print(nota + " ");
+            }
+            System.out.print("|");
+        }
+        System.out.println("|");
+
+    }
+
+    public static void ejercicio16(){
+         for (int i = 0; i < 3; i++) {
+            String figSalida = "";
+            int r = (int)(Math.random()*5);
+            switch(r){
+                case 0: figSalida = "Diamante"; break;
+                case 1: figSalida = "Corazon"; break;
+                case 2: figSalida = "campana"; break;
+                case 3: figSalida = "herradura"; break;
+                case 4: figSalida = "limon"; break;
+            }
+            System.out.print(figSalida+" ");
+        }
+        System.out.println();
     }
 }

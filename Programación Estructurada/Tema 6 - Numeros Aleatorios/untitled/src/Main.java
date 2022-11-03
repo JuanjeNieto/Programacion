@@ -1,5 +1,6 @@
 
 import java.sql.SQLOutput;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -246,7 +247,7 @@ public class Main {
     public static void ejercicio6() {
         Scanner s = new Scanner(System.in);
 
-        double r = (int)((Math.random() * 101));
+        double r = (int) ((Math.random() * 101));
         int cont = 4;
         int numerointroducido = 0;
         int i = 0;
@@ -269,7 +270,7 @@ public class Main {
                 cont--;
             }
         }
-        System.out.println("El numero era "+r);
+        System.out.println("El numero era " + r);
     }
 
     public static void ejercicio7() {
@@ -280,11 +281,11 @@ public class Main {
 
         for (int i = 1; i <= 3; i++) {
             System.out.println("-------");
-            System.out.println("Columna Nª"+i);
+            System.out.println("Columna Nª" + i);
             System.out.println();
             for (int j = 1; j <= 14; j++) {
-                int apuesta = (int)(Math.random()*3);
-                switch (apuesta){
+                int apuesta = (int) (Math.random() * 3);
+                switch (apuesta) {
                     case 0:
                         valorApuesta = "X";
                         break;
@@ -298,7 +299,7 @@ public class Main {
                         break;
 
                 }
-                System.out.println("Apuesta Nª"+(100+j)+"\t" + valorApuesta);
+                System.out.println("Apuesta Nª" + (100 + j) + "\t" + valorApuesta);
                 System.out.println();
             }
 
@@ -306,7 +307,8 @@ public class Main {
 
 
     }
-    public static void ejercicio8(){
+
+    public static void ejercicio8() {
 
         Scanner s = new Scanner(System.in);
         System.out.println("--------------");
@@ -315,15 +317,15 @@ public class Main {
 
         for (int i = 1; i <= 3; i++) {
             System.out.println("-------");
-            System.out.println("Columna Nª"+i);
+            System.out.println("Columna Nª" + i);
             System.out.println();
             for (int j = 1; j <= 14; j++) {
                 //Como dice el ejercicio, lo hacemos con divisores de 6
                 //3/6 para el 1
                 //2/6 para el 2
                 //1/6 para el X
-                int apuesta = (int)(Math.random()*6);
-                switch (apuesta){
+                int apuesta = (int) (Math.random() * 6);
+                switch (apuesta) {
                     case 0:
                         valorApuesta = "1";
                         break;
@@ -345,51 +347,66 @@ public class Main {
                         break;
 
                 }
-                System.out.println("Apuesta Nª"+(100+j)+"\t" + valorApuesta);
+                System.out.println("Apuesta Nª" + (100 + j) + "\t" + valorApuesta);
                 System.out.println();
             }
 
         }
     }
-    public static void ejercicio9(){
+
+    public static void ejercicio9() {
 
         int r = 0;
         int count = 0;
-        while(r != 24){
-            r = (int)(Math.random() * 101);
-            if ((r%2) == 0) {
+        while (r != 24) {
+            r = (int) (Math.random() * 101);
+            if ((r % 2) == 0) {
                 System.out.println(r);
                 count++;
             }
         }
-        System.out.println("Se han generado "+count+" numeros");
+        System.out.println("Se han generado " + count + " numeros");
 
 
     }
-    public static void ejercicio10(){
+
+    public static void ejercicio10() {
         for (int i = 0; i < 10; i++) {
-            int nVeces = ((int)(Math.random()*43));
+            int nVeces = ((int) (Math.random() * 41));
             for (int j = 0; j < nVeces; j++) {
                 String caracterMostrado = "";
-                int caracterRandom = (int)(Math.random()*6);
-                switch(caracterRandom){
-                    case 0: caracterMostrado = "*"; break;
-                    case 1: caracterMostrado = "."; break;
-                    case 2: caracterMostrado = "-"; break;
-                    case 3: caracterMostrado = "="; break;
-                    case 4: caracterMostrado = "|"; break;
-                    case 5: caracterMostrado = "@"; break;
+                int caracterRandom = (int) (Math.random() * 6);
+                switch (caracterRandom) {
+                    case 0:
+                        caracterMostrado = "*";
+                        break;
+                    case 1:
+                        caracterMostrado = ".";
+                        break;
+                    case 2:
+                        caracterMostrado = "-";
+                        break;
+                    case 3:
+                        caracterMostrado = "=";
+                        break;
+                    case 4:
+                        caracterMostrado = "|";
+                        break;
+                    case 5:
+                        caracterMostrado = "@";
+                        break;
 
-                    default: break;
+                    default:
+                        break;
                 }
-                System.out.print( caracterMostrado + " ");
+                System.out.print(caracterMostrado + " ");
             }
             System.out.println();
         }
 
     }
 
-    public static void ejercicio11(){
+    public static void ejercicio11() {
         String nota = "";
         int suspenso = 0;
         int suficiente = 0;
@@ -433,21 +450,23 @@ public class Main {
         System.out.println("Hay " + sobresaliente + " sobres");
     }
 
-    public static void ejercicio12(){
+    public static void ejercicio12() {
 
+        Random randiom = new Random();
         for (int i = 1; i < 1000000; i++) {
-            char r = (char)((Math.random()*127)+32);
+            char r = (char)(randiom.nextInt(95)+32);
             System.out.print(r);
         }
     }
-    public static void ejercicio13(){
 
-       boolean igual = false;
+    public static void ejercicio13() {
 
-        while (!igual){
+        boolean igual = false;
 
-            int dado1 = ((int)(Math.random()*6)+1);
-            int dado2 = ((int)(Math.random()*6)+1);
+        while (!igual) {
+
+            int dado1 = ((int) (Math.random() * 6) + 1);
+            int dado2 = ((int) (Math.random() * 6) + 1);
             System.out.println();
 
             System.out.println(dado1);
@@ -460,7 +479,8 @@ public class Main {
         }
         System.out.println();
     }
-    public static void ejercicio14(){
+
+    public static void ejercicio14() {
         Scanner s = new Scanner(System.in);
 
         System.out.println("Piensa un número entre 0 y 100");
@@ -470,53 +490,54 @@ public class Main {
         int max = 100;
         boolean acierto = false;
 
-        while((i <= 5) && (!acierto)){
-            int r = (int)(Math.random()*(max-min+1))+min;
-            System.out.println("Es este? = "+r);
-            System.out.println("Sí (0)" +"\tEs mayor (1)"+"\tEs menor(2)");
+        while ((i <= 5) && (!acierto)) {
+            int r = (int) (Math.random() * (max - min + 1)) + min;
+            System.out.println("Es este? = " + r);
+            System.out.println("Sí (0)" + "\tEs mayor (1)" + "\tEs menor(2)");
             int opcion = 0;
             opcion = Integer.parseInt(s.next());
 
-            switch(opcion){
+            switch (opcion) {
                 case 0:
                     acierto = true;
                     System.out.println("Pan comido!");
                     break;
                 case 1:
-                    min = r+1;
+                    min = r + 1;
                     break;
                 case 2:
-                    max = r-1;
+                    max = r - 1;
                     break;
                 default:
                     System.out.println("Error");
                     i--;
                     break;
             }
-                i++;
+            i++;
 
         }
-        if (!acierto){
+        if (!acierto) {
             System.out.println("Me has ganado...");
         }
     }
 
-    public static void ejercicio15(){
-          int compas = 2;
+    public static void ejercicio15() {
+        int compas = 2;
 
-        while (compas %2 == 0){
-            compas = (int)((Math.random()*28)+4);
-        };
+        while (compas % 2 == 0) {
+            compas = (int) ((Math.random() * 28) + 4);
+        }
+        ;
 
         String primera = "";
 
-        for (int i = 0; i < compas; i++){
+        for (int i = 0; i < compas; i++) {
 
-            for (int j = 0; j < 4; j++){
+            for (int j = 0; j < 4; j++) {
 
-                int notaRandom = (int)(Math.random()*7);
+                int notaRandom = (int) (Math.random() * 7);
                 String nota = "";
-                switch (notaRandom){
+                switch (notaRandom) {
                     case 0:
                         nota = "do";
                         break;
@@ -539,10 +560,10 @@ public class Main {
                         nota = "si";
                         break;
                 }
-                if ((i == 0) && (j == 0)){
+                if ((i == 0) && (j == 0)) {
                     primera = nota;
                 }
-                if ((i == compas-1) && (j == 3)){
+                if ((i == compas - 1) && (j == 3)) {
                     nota = primera;
                 }
                 System.out.print(nota + " ");
@@ -553,19 +574,44 @@ public class Main {
 
     }
 
-    public static void ejercicio16(){
-         for (int i = 0; i < 3; i++) {
-            String figSalida = "";
-            int r = (int)(Math.random()*5);
-            switch(r){
-                case 0: figSalida = "Diamante"; break;
-                case 1: figSalida = "Corazon"; break;
-                case 2: figSalida = "campana"; break;
-                case 3: figSalida = "herradura"; break;
-                case 4: figSalida = "limon"; break;
+    public static void ejercicio16() {
+        Random random = new Random();
+        String[] figsalida = new String[5];
+        figsalida[0] = "Diamante";
+        figsalida[1] = "Corazón";
+        figsalida[2] = "Campana";
+        figsalida[3] = "Herradura";
+        figsalida[4] = "Limon";
+
+        int fig1 = 0;
+        int fig2 = 0;
+        int fig3 = 0;
+        for (int i = 0; i < 3; i++) {
+            int posicionAzar = random.nextInt(figsalida.length);
+            System.out.print(figsalida[posicionAzar] + " ");
+            if (i == 0) {
+                fig1 = posicionAzar;
             }
-            System.out.print(figSalida+" ");
+            if (i == 1) {
+                fig2 = posicionAzar;
+            }
+            if (i == 2) {
+                fig3 = posicionAzar;
+            }
         }
+        System.out.println();
+        if ((fig3 == fig2)&&(fig1 == fig2)) {
+            System.out.println("HAS GANADO 10 MONEDAS");
+        }
+        else if((fig3 == fig2)||(fig1 == fig2)||(fig3 == fig1)){
+            System.out.println("Has ganao una monea");
+        }
+        else{
+            System.out.println("Has perdido");
+        }
+        System.out.println();
+
+
         System.out.println();
     }
 }
